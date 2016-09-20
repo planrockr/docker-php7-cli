@@ -12,5 +12,4 @@ RUN apt-get update \
     && make install \
     && echo "extension=memcached.so" >> /usr/local/etc/php/conf.d/memcached.ini \
     && docker-php-ext-install -j$(nproc) bcmath \
-    && pecl install xdebug \
-    && docker-php-ext-enable xdebug
+    && pecl install xdebug
