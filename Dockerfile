@@ -12,4 +12,5 @@ RUN apt-get update \
     && make install \
     && echo "extension=memcached.so" >> /usr/local/etc/php/conf.d/memcached.ini \
     && docker-php-ext-install -j$(nproc) bcmath \
-    && pecl install xdebug
+    && pecl install xdebug \
+    && echo "memory_limit = 12800M" >> /usr/local/etc/php/conf.d/666-custom.ini
